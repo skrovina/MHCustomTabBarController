@@ -89,6 +89,12 @@ NSString *const MHCustomTabBarControllerViewControllerAlreadyVisibleNotification
     return YES;
 }
 
+#pragma mark - UIStatusBar
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return [self.destinationViewController preferredStatusBarStyle];
+}
+
 #pragma mark - Memory Warning
 - (void)didReceiveMemoryWarning {
     [[self.viewControllersByIdentifier allKeys] enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
